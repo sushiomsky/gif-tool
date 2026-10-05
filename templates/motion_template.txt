@@ -1,0 +1,4 @@
+# Bewegungsvorgaben
+# Beschreiben Sie die gewünschte Animation oder Bewegung.
+
+Die Figur führt eine dynamische Tanzbewegung aus, die fließend und rhythmisch wirkt.

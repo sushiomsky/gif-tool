@@ -1,0 +1,4 @@
+# Negative Prompts
+# Elemente und Stile, die nicht erscheinen sollen.
+
+kein Text, keine Wasserzeichen, keine Verzerrungen.

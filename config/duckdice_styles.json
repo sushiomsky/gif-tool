@@ -1,0 +1,32 @@
+[
+  {
+    "id": "casino-meme",
+    "label": "Casino Meme",
+    "description": "Duckling mit Dice, Coins, Casino-Requisiten und klarer Meme-Pointe.",
+    "prompt": "Use the DuckDice casino-meme composition: one clear duckling, dice or casino prop, bright readable comic staging, and one strong visual punchline. Keep the background supportive, not busy."
+  },
+  {
+    "id": "cinematic-comic",
+    "label": "Cinematic Comic",
+    "description": "Detaillierte illustrierte Szene mit Licht, Tiefe und kleiner Geschichte.",
+    "prompt": "Use the Quackicists cinematic comic style from the production references: simple yellow cartoon ducklings with clean dark outlines and soft cel shading, warm amber interiors against cold rainy blue exteriors, moody illustrated backgrounds, expressive eyes, emotional restraint, slow-cinema composition, and a readable narrative moment. No photorealism, gritty noir, heavy texture, or text in the image."
+  },
+  {
+    "id": "reaction-closeup",
+    "label": "Reaction Close-up",
+    "description": "Großes ausdrucksstarkes Gesicht, klare Reaktion und kurze Sprechblase.",
+    "prompt": "Use the DuckDice reaction-meme style: medium close-up or close-up, oversized expressive eyes and beak, a very clear emotional reaction, and one short speech bubble or banner."
+  },
+  {
+    "id": "action-chaos",
+    "label": "Action & Chaos",
+    "description": "Dynamische Pose, Impact-Lines, dramatische Requisiten und übertriebene Comic-Energie.",
+    "prompt": "Use the DuckDice action-comic style: dynamic pose, strong diagonal composition, expressive gesture, comic impact lines or controlled motion cues, and a funny exaggerated situation."
+  },
+  {
+    "id": "ensemble-world",
+    "label": "Ensemble World",
+    "description": "Mehrere Ducklings oder eine größere DuckDice-Welt mit Szene und Nebenfiguren.",
+    "prompt": "Use the DuckDice ensemble-world style: a coherent illustrated environment such as a casino, neon room, office, or cave, with a clear main duckling and up to three supporting ducklings or characters."
+  }
+]

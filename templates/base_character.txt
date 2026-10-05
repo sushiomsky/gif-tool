@@ -1,0 +1,4 @@
+# Grundlegender Charakter
+# Ersetzen Sie {{character}} durch die gewünschte Figur.
+
+{{character}} ist eine sympathische und lebhafte Figur mit markanten Merkmalen.
