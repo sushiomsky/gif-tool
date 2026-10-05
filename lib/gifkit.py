@@ -122,20 +122,35 @@ def images_to_gif(
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with tempfile.NamedTemporaryFile(suffix=".txt", mode="w", delete=False) as f:
-        for p in frame_paths:
-            # ffmpeg concat list
-            f.write(f"file {p!s}\n")
-        list_file = f.name
+    frames: list[Image.Image] = []
+    for p in frame_paths:
+        with Image.open(p) as im:
+            if im.mode != "RGBA":
+                im = im.convert("RGBA")
+            if width and im.width > width:
+                ratio = width / im.width
+                im = im.resize((width, max(2, int(im.height * ratio) // 2 * 2)), Image.LANCZOS)
+            frames.append(im)
+    if not frames:
+        raise ValueError("no frames could be read")
 
-    cmd = [
-        "ffmpeg", "-y",
-        "-f", "concat", "-safe", "0", "-i", list_file,
-        "-vf", f"scale={width}:-2:flags=lanczos,fps={fps}",
-        str(output_path),
-    ]
-    _run_ffmpeg(cmd)
-    Path(list_file).unlink(missing_ok=True)
+    # Flatten to opaque when no frame carries real transparency.
+    def _has_alpha(im: Image.Image) -> bool:
+        try:
+            return im.getchannel("A").getextrema() != (255, 255)
+        except Exception:
+            return False
+
+    frames = [f if _has_alpha(f) else f.convert("RGB") for f in frames]
+    duration_ms = int(round(1000 / fps))
+    frames[0].save(
+        output_path,
+        save_all=True,
+        append_images=frames[1:],
+        duration=duration_ms,
+        loop=0,
+        disposal=2,
+    )
     return output_path
 
 
